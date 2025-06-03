@@ -1,49 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YASSINE HOUSE</title>
-    <link rel="stylesheet" href="stayle.css">
+    <title>ياسين العقاري - أراضي مميزة للبيع</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-       
-        <img src="YASSINE.png" alt="Logo" class="logo">
+        <div class="logo-section">
+            <img src="YASSIN.png" alt="ياسين العقاري" class="logo">
+            <div class="brand-text">
+                <h1>ياسين العقاري</h1>
+                <p>أراضي مميزة للاستثمار</p>
+            </div>
+        </div>
         <nav class="navigator">
-            <a href="argoud1.pdf" download class="nav-link">Planner</a>
-            <a href="https://maps.app.goo.gl/WEsDM125oKGPGQwf7" class="nav-link">Location</a>
-            <a href="#popup" class="nav-link" id="contactButton">Contact</a>
+            <a href="#location" class="nav-link">الموقع</a>
+            <a href="#contact" class="nav-link" id="contactButton">تواصل معنا</a>
+            <a href="https://maps.app.goo.gl/WEsDM125oKGPGQwf7" class="nav-link" target="_blank">خريطة الموقع</a>
         </nav>
     </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>أراضي استثمارية مميزة للبيع</h1>
+        <p>اكتشف الفرصة الذهبية للاستثمار في أراضي قريبة من ثانوية عثماني تيجان ومحطة المسافرين قايس</p>
+        <div class="hero-image">
+            <img src="111.svg" alt="مخطط الأراضي" class="property-diagram" id="propertyImage">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>موقع استراتيجي متميز</h3>
+            <p>في قلب المنطقة الحيوية، قريب جداً من ثانوية عثماني تيجان الجديدة ومحطة المسافرين قايس، مما يجعله خياراً مثالياً للاستثمار</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-bus"></i>
+            </div>
+            <h3>مواصلات وصول سهل</h3>
+            <p>أقرب من محطة المسافرين قايس مع شبكة مواصلات متطورة تربط المنطقة بجميع أنحاء المدينة، مما يضمن سهولة الحركة والتنقل</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-building"></i>
+            </div>
+            <h3>المرافق العمومية الشاملة</h3>
+            <p>محاط بجميع المرافق العمومية الأساسية: المدارس، المستشفيات، المراكز التجارية، والخدمات الحكومية - كل ما تحتاجه في متناول اليد</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>استثمار مضمون النمو</h3>
+            <p>منطقة في تطور سريع ومستمر مع إمكانيات نمو عالية وعائد استثماري مجزي، فرصة ذهبية للمستثمرين الأذكياء</p>
+        </div>
+    </section>
+
+    <!-- Location Details -->
+    <section class="location-details" id="location">
+        <h2>مميزات الموقع الاستراتيجي</h2>
+        <div class="location-grid">
+            <div class="location-item">
+                <i class="fas fa-school"></i>
+                <div>
+                    <h4>ثانوية عثماني تيجان الجديدة</h4>
+                    <p>مجاورة مباشرة للمؤسسة التعليمية الحديثة</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <i class="fas fa-bus-alt"></i>
+                <div>
+                    <h4>محطة المسافرين قايس</h4>
+                    <p>الأقرب من المحطة الرئيسية للمواصلات</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <i class="fas fa-hospital"></i>
+                <div>
+                    <h4>المرافق الصحية المتقدمة</h4>
+                    <p>مستشفيات وعيادات متخصصة قريبة</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <i class="fas fa-shopping-cart"></i>
+                <div>
+                    <h4>المراكز التجارية النشطة</h4>
+                    <p>أسواق ومحلات تجارية متنوعة ومتطورة</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <i class="fas fa-mosque"></i>
+                <div>
+                    <h4>المرافق الدينية</h4>
+                    <p>مساجد ومراكز إسلامية في المحيط</p>
+                </div>
+            </div>
+            <div class="location-item">
+                <i class="fas fa-road"></i>
+                <div>
+                    <h4>شبكة طرق متطورة</h4>
+                    <p>طرق معبدة وسهولة في الوصول</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>تواصل معنا الآن للحصول على أفضل العروض</h2>
+        <p style="margin-bottom: 30px; font-size: 18px; color: #7f8c8d;">
+            لا تفوت هذه الفرصة الاستثمارية المميزة - تواصل معنا اليوم
+        </p>
+        <div class="contact-buttons">
+            <a href="https://wa.me/213662169314" class="contact-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                واتساب: 0662169314
+            </a>
+            <a href="tel:+213662169314" class="contact-btn phone-btn">
+                <i class="fas fa-phone"></i>
+                اتصال مباشر
+            </a>
+        </div>
+    </section>
 
     <!-- Popup -->
     <div id="popup" class="popup">
         <div class="popup-content">
-            <h2>Contact Us</h2>
-            <div class="social-icons">
-              <!--  <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https:#" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-                <br>
-                -->
-                <a href="tel:+213662169314">(+213) 6-62-16-93-14</a>
+            <h2>تواصل معنا</h2>
+            <div class="contact-options">
+                <a href="https://wa.me/213662169314" class="contact-option" target="_blank">
+                    <i class="fab fa-whatsapp" style="color: #25d366;"></i>
+                    <span>واتساب: 0662169314</span>
+                </a>
+                <a href="tel:+213662169314" class="contact-option">
+                    <i class="fas fa-phone" style="color: #667eea;"></i>
+                    <span>اتصال مباشر: 0662169314</span>
+                </a>
+                <a href="https://maps.app.goo.gl/WEsDM125oKGPGQwf7" class="contact-option" target="_blank">
+                    <i class="fas fa-map-marker-alt" style="color: #ff6b6b;"></i>
+                    <span>عرض الموقع على الخريطة</span>
+                </a>
             </div>
-            <button id="closeButton" class="close-btn">Close</button>
+            <button id="closeButton" class="close-btn">إغلاق</button>
         </div>
-    </div>
-
-    <!-- Body Content -->
-    <div class="body-content">
-        <img src="memememe.png" alt="Body Image" class="body-image" id="bodyImage">
     </div>
 
     <!-- Full-Screen Image Overlay -->
     <div id="fullScreenOverlay" class="full-screen-overlay">
-        <img src="111.svg" alt="Full Screen Image" class="full-screen-image">
+        <img src="111.svg" alt="مخطط الأراضي بالتفصيل" class="full-screen-image">
+        <button class="close-fullscreen">×</button>
     </div>
 
-    <script src="main.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ياسين العقاري - جميع الحقوق محفوظة</p>
+        <p>تم التطوير بواسطة: <span class="developer-credit">أمين حليتيم</span></p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
