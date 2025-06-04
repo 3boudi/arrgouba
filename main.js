@@ -117,4 +117,129 @@ document.querySelectorAll('.contact-btn, .contact-option').forEach(button => {
 
 // Add hover effects for better UX
 document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener
+    link.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px) scale(1.05)';
+    });
+    
+    link.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Add enhanced mobile touch support
+let touchStartY = 0;
+let touchEndY = 0;
+
+document.addEventListener('touchstart', e => {
+    touchStartY = e.changedTouches[0].screenY;
+}, { passive: true });
+
+document.addEventListener('touchend', e => {
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe();
+}, { passive: true });
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartY - touchEndY;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swiped up - could add scroll to next section
+            console.log('Swiped up');
+        } else {
+            // Swiped down - could add scroll to previous section
+            console.log('Swiped down');
+        }
+    }
+}
+
+// Add performance optimization for scroll events
+let ticking = false;
+
+function updateScrollEffects() {
+    const header = document.querySelector('header');
+    const scrollY = window.scrollY;
+    
+    if (scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = '0 6px 25px rgba(0, 0, 0, 0.15)';
+    } else {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+    }
+    
+    ticking = false;
+}
+
+function requestScrollUpdate() {
+    if (!ticking) {
+        requestAnimationFrame(updateScrollEffects);
+        ticking = true;
+    }
+}
+
+// Replace the previous scroll event listener with the optimized version
+window.removeEventListener('scroll', () => {});
+window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+
+// Add error handling for missing elements
+function safeAddEventListener(selector, event, handler) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.addEventListener(event, handler);
+    } else {
+        console.warn(`Element ${selector} not found`);
+    }
+}
+
+// Initialize all event listeners safely
+document.addEventListener('DOMContentLoaded', () => {
+    // Reinitialize critical elements if needed
+    const popup = document.getElementById('popup');
+    const contactButton = document.getElementById('contactButton');
+    const closeButton = document.getElementById('closeButton');
+    const propertyImage = document.getElementById('propertyImage');
+    const fullScreenOverlay = document.getElementById('fullScreenOverlay');
+    const closeFullscreen = document.querySelector('.close-fullscreen');
+    
+    // Verify all elements exist
+    if (!popup || !contactButton || !closeButton || !propertyImage || !fullScreenOverlay || !closeFullscreen) {
+        console.warn('Some required elements are missing from the DOM');
+    }
+});
+
+// Add accessibility improvements
+document.addEventListener('keydown', (e) => {
+    // Allow Enter key to activate buttons
+    if (e.key === 'Enter' && e.target.classList.contains('nav-link')) {
+        e.target.click();
+    }
+    
+    // Tab navigation improvements
+    if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-navigation');
+    }
+});
+
+document.addEventListener('mousedown', () => {
+    document.body.classList.remove('keyboard-navigation');
+});
+
+// Add lazy loading for images if needed
+const images = document.querySelectorAll('img[src]');
+const imageObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.classList.add('loaded');
+            imageObserver.unobserve(img);
+        }
+    });
+});
+
+images.forEach(img => {
+    imageObserver.observe(img);
+});
+
+console.log('Main.js loaded successfully!');
